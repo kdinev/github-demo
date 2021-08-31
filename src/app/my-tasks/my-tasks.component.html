@@ -54,7 +54,7 @@
 <div class="content_section column">
   <div class="content_toolbar row">
     <h5 class="title_1">VD Team</h5>
-    <button igxButton="flat" igxButtonColor="var(--igx-secondary-500)" [disabled]="false" class="user-input button_4">
+    <button igxButton="flat" igxButtonColor="var(--igx-secondary-500)" [disabled]="false" [igxToggleAction]="dialogWindow" class="user-input button_4">
       <igx-icon>list</igx-icon>
       <span>LIST</span>
     </button>
@@ -158,3 +158,6 @@
     </div>
   </div>
 </div>
+<igx-dialog message="Are you sure you want to do this?" leftButtonLabel="Cancel" rightButtonLabel="OK" [closeOnOutsideSelect]="true" [closeOnEscape]="true" (onLeftButtonSelect)="dialogWindow.toggle()" (onRightButtonSelect)="dialogWindow.toggle()" #dialogWindow class="dialog-window">
+  <igx-dialog-title>Confirmation</igx-dialog-title>
+</igx-dialog>
